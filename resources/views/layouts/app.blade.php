@@ -8,7 +8,7 @@
     <title>
         @yield('title')
     </title>
-    <link href="{{ asset('storage/images/icone.ico') }}" rel="icon" type="image/ico">
+    <link href="{{ Vite::asset('resources/img/icone.ico') }}" rel="icon" type="image/ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])

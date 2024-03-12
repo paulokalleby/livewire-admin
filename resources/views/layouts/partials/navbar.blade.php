@@ -9,8 +9,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-none d-sm-inline-block" :class="{ 'show': dropdown }" href="#"
                     x-on:click.prevent="dropdown = !dropdown">
-                    {{-- <img src="{{ asset('storage/images/thumb.jpg') }}" class="avatar img-fluid rounded-circle me-1" /> --}}
-                    <i class="far fa-user"></i>
+                    <img src="{{ Vite::asset('resources/img/thumb.jpg') }}" class="avatar img-fluid rounded-circle me-1" />
                     <span class="text-dark">{{ auth()->user()->name }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" :class="{ 'show': dropdown }">
