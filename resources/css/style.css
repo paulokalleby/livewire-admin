@@ -1,0 +1,75 @@
+
+.badge-success {
+    color: #0f5132 !important;
+    background-color: #d1e7dd !important;
+    border-color: #badbcc !important;
+}
+
+.badge-danger {
+    color: #842029 !important;
+    background-color: #f8d7da !important;
+    border-color: #f5c2c7 !important;
+}
+
+.badge-secondary {
+    color: #41464b !important;
+    background-color: #e2e3e5 !important;
+    border-color: #d3d6d8 !important;
+}
+
+.bg-gray-200, 
+.badge-info {
+    color: #055160 !important;
+    background-color: #cff4fc !important;
+    border-color: #b6effb !important;
+}
+
+.bg-orange-500,
+.badge-warning {
+    color: #664d03 !important;
+    background-color: #fff3cd !important;
+    border-color: #ffecb5 !important;
+}
+
+.alert-toast {
+    position: absolute;
+    bottom: 2em !important;
+    right: 3.5em !important;
+    z-index: 9999 !important;
+}
+
+.alert-toast-close {
+    position: absolute;
+    bottom: 2em !important;
+    right: 3.5em !important;
+    z-index: 9999 !important;
+    padding-right: 2.5em !important;
+}
+
+.alert-toast .btn-close {
+    padding-left: 2em !important;
+}
+
+#exampleModal .modal-dialog {
+   visibility: initial !important;
+}
+
+.bg-green-500 {
+    background: #22c55e !important;
+    color: white !important
+}
+
+.bg-red-500 {
+    background: #ef4444 !important;
+    color: white !important
+}
+
+.bg-orange-500 {
+    background: #f97316 !important;
+    color: white !important
+}
+
+.bg-sky-400 {
+    background: #38bdf8 !important;
+    color: white !important
+}

@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Livewire\Admin\Roles;
+
+use App\Livewire\Forms\Role\RoleUpdateForm;
+use App\Models\Permission;
+use App\Models\Resource;
+use App\Models\Role;
+use Livewire\Component;
+use Masmerise\Toaster\Toaster;
+
+class RolesEdit extends Component
+{
+    public RoleUpdateForm $form; 
+
+    public $permissions;
+
+    public function render()
+    {
+        return view('.admin.roles.roles-edit')->with([
+            'resources' => Resource::with('permissions')->get()
+        ]);
+    }
+
+    public function mount(Role $role)
+    {
+        $this->permissions = Permission::get();
+        
+        $this->form->setRole($role);
+    }
+
+    public function selectAll()
+    {
+        foreach($this->permissions as $permission) {
+            $this->form->permission[$permission->id] = true;
+        }     
+    }
+
+    public function clearSelection()
+    {
+        $this->form->permission = [];
+    }
+
+    public function update() : void
+    {
+
+        $this->validate();
+
+        $this->form->update();
+
+        Toaster::success('Papel atualizado com sucesso!');
+
+    }
+
+}
