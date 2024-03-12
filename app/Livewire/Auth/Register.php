@@ -50,7 +50,7 @@ class Register extends Component
         $tenant->users()->create([
             'name'     => $this->name,
             'email'    => $this->email,
-            'password' => bcrypt($this->password),
+            'password' => $this->password,
             'owner'    => true,
         ]);
 
