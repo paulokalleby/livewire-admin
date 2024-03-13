@@ -1,12 +1,6 @@
 @section('title', 'Cadastrar Papel')
 
 <div>
-    <div class="row mb-2 mb-xl-3">
-        <div class="col-auto d-none d-sm-block">
-            <h3>Cadastrar Papel</h3>
-        </div>
-    </div>
-
     <div class="row">
         <div class="col-12">
             <div class="card">

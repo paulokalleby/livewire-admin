@@ -1,13 +1,6 @@
 @section('title', 'Detalhes do Papel')
 
 <div>
-    <div class="row mb-2 mb-xl-3">
-        <div class="col-auto d-none d-sm-block">
-            <h3>Detalhes do Papel</h3>
-        </div>
-    </div>
-
-
     <div class="row">
         <div class="col-12">
             <ul class="list-group mb-3">

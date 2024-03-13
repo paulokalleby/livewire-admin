@@ -1,4 +1,4 @@
-<nav x-data="{}" class="navbar navbar-expand navbar-light navbar-bg">
+<nav x-data="{}" class="navbar navbar-expand navbar-light navbar-bg_ shadow-none px-5">
     <a href="#" class="sidebar-toggle" x-on:click.prevent="toggle()">
         <i class="hamburger align-self-center"></i>
     </a>

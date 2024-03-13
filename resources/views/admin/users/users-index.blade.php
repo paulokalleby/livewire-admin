@@ -1,12 +1,6 @@
 @section('title', 'Usuários')
 
 <div>
-    <div class="row mb-2 mb-xl-3">
-        <div class="col-auto d-none d-sm-block">
-            <h3>Usuários</h3>
-        </div>
-    </div>
-
     <div class="row mb-2">
         <div class="col-md-3">
             <input class="form-control mb-3" placeholder="Nome" type="text" wire:model.live="name" />
