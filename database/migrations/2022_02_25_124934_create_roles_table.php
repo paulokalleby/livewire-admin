@@ -13,7 +13,7 @@ return new class extends Migration
             $table->foreignUuid('tenant_id')
                     ->index()
                     ->cascadeOnDelete();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->boolean('active')->default(true);
             $table->timestamps();
         });

@@ -3,10 +3,13 @@
 namespace App\Livewire\Forms\Role;
 
 use App\Models\Role;
+use App\Traits\UpdateableTenant;
 use Livewire\Form;
 
 class RoleUpdateForm extends Form
 {
+    use UpdateableTenant;
+
     public ?Role $role;
 
     public $uuid;
@@ -21,7 +24,8 @@ class RoleUpdateForm extends Form
             'name'     => [
                 'nullable',
                 'string',
-                'max:50'
+                'max:50',
+                $this->unique('roles', $this->uuid),
             ],
             'active'  => [
                 'nullable', 

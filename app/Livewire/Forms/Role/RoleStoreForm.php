@@ -3,10 +3,13 @@
 namespace App\Livewire\Forms\Role;
 
 use App\Models\Role;
+use App\Traits\BuildableTenant;
 use Livewire\Form;
 
 class RoleStoreForm extends Form
 {
+    use BuildableTenant;
+
     public $uuid;
     public $name;
     public $active = true;
@@ -18,7 +21,8 @@ class RoleStoreForm extends Form
             'name'     => [
                 'required', 
                 'string', 
-                'max:50'
+                'max:50',
+                $this->unique('roles'),
             ],
             'active'  => [
                 'nullable', 
