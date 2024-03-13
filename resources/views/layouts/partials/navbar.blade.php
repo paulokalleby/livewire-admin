@@ -7,7 +7,7 @@
         <ul class="navbar-nav navbar-align"x-data="{ dropdown: false }">
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" :class="{ 'show': dropdown }" href="#"
+                <a class="nav-link dropdown-toggle d-sm-inline-block" :class="{ 'show': dropdown }" href="#"
                     x-on:click.prevent="dropdown = !dropdown">
                     <img src="{{ Vite::asset('resources/img/thumb.jpg') }}" class="avatar img-fluid rounded-circle me-1" />
                     <span class="text-dark">{{ auth()->user()->name }}</span>
