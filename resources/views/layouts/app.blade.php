@@ -17,6 +17,20 @@
 
 <body>
 
+    @guest
+        <main class="d-flex w-100">
+            <div class="container d-flex flex-column">
+                <div class="row vh-100">
+                    <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto d-table h-100">
+                        <div class="d-table-cell align-middle">
+                            {{ $slot }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    @endguest
+
     @auth
         <div class="wrapper">
 
@@ -44,36 +58,22 @@
 
             </div>
         </div>
+
+        <x-toaster-hub />
+
+        <script>
+            const toggle = () => {
+                Alpine.store('collapsed').status = !Alpine.store('collapsed').status;
+            }
+    
+            document.addEventListener('alpine:init', () => {
+                Alpine.store('collapsed', {
+                    status: false,
+                })
+            })
+        </script>
+
     @endauth
     
-    @guest
-        <main class="d-flex w-100">
-            <div class="container d-flex flex-column">
-                <div class="row vh-100">
-                    <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 mx-auto d-table h-100">
-                        <div class="d-table-cell align-middle">
-                            {{ $slot }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    @endguest
-
-    <x-toaster-hub />
-
-    <script>
-        const toggle = () => {
-            Alpine.store('collapsed').status = !Alpine.store('collapsed').status;
-        }
-
-        document.addEventListener('alpine:init', () => {
-            Alpine.store('collapsed', {
-                status: false,
-            })
-        })
-    </script>
-
 </body>
-
 </html>
