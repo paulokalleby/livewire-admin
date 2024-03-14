@@ -31,7 +31,7 @@
                     @foreach ($users as $user)
                         <li class="list-group-item">
                             {{ $user->name }}
-                            <button class="btn btn-sm btn-link float-end"
+                            <button class="btn btn-sm btn-light float-end"
                                 wire:confirm="Deseja desvincular usuário?"
                                 wire:click.prevent="detach('{{ $user->id }}')">
                                 <i class=" far fa-trash"></i>
