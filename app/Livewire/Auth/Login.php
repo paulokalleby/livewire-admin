@@ -44,7 +44,7 @@ class Login extends Component
 
             $this->reset();
 
-            Toaster::info('Seja bem vido(a)! '.Auth::user()->name);
+            Toaster::info('Seja bem vido(a) '.Auth::user()->name);
             
             return redirect()->route('home');
 

@@ -59,8 +59,6 @@
             </div>
         </div>
 
-        <x-toaster-hub />
-
         <script>
             const toggle = () => {
                 Alpine.store('collapsed').status = !Alpine.store('collapsed').status;
@@ -74,6 +72,8 @@
         </script>
 
     @endauth
+
+    <x-toaster-hub />
     
 </body>
 </html>
