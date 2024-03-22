@@ -3,12 +3,12 @@
 namespace App\Livewire\Forms\Role;
 
 use App\Models\Role;
-use App\Traits\UpdateableTenant;
+use App\Traits\HasSingleField;
 use Livewire\Form;
 
 class RoleUpdateForm extends Form
 {
-    use UpdateableTenant;
+    use HasSingleField;
 
     public ?Role $role;
 

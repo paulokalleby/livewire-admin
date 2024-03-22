@@ -3,12 +3,12 @@
 namespace App\Livewire\Forms\Role;
 
 use App\Models\Role;
-use App\Traits\BuildableTenant;
+use App\Traits\HasSingleField;
 use Livewire\Form;
 
 class RoleStoreForm extends Form
 {
-    use BuildableTenant;
+    use HasSingleField;
 
     public $uuid;
     public $name;
