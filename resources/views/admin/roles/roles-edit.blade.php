@@ -60,7 +60,7 @@
 
                             @foreach ($resources as $resource)
                                 <div class="col-md-2 mb-3">
-                                    <h6 class="mb-3">{{ $resource->name }}</h6>
+                                    <h6 class="mb-2">{{ $resource->name }}</h6>
                                     @foreach ($resource->permissions as $index => $item)
                                         <div class="form-check form-switch_">
                                             <input class="form-check-input" type="checkbox"

@@ -57,7 +57,6 @@
         </div>
     </div>
 
-
     @can('users.roles')
         @if (!$roles->isEmpty())
             <div class="row mb-xl-3">
@@ -65,27 +64,30 @@
                     <h5 class="text-muted">Papéis</h5>
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-body pb-0">
-                            <div class="row">
-
-                                @foreach ($roles as $index => $item)
-                                    <div class="mb-3 col-md-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox"
-                                                wire:model="form.role.{{ $item->id }}" id="role-{{ $item->slug }}" />
-                                            <label class="form-check-label" for="role-{{ $item->slug }}">
-                                                {{ $item->name }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item">
+                            <button wire:click.prevent="selectAll" type="button" class="btn btn-sm btn-light">
+                                Selecionar Tudo
+                            </button>
+                            <button wire:click.prevent="clearSelection" type="button" class="btn btn-sm btn-light">
+                                Limpar Seleção
+                            </button>
+                        </li>
+                        @foreach ($roles as $index => $item)
+                            <li class="list-group-item">
+                                <div class="form-check form-switch_">
+                                    <input class="form-check-input" type="checkbox"
+                                        wire:model="form.role.{{ $item->id }}" id="role-{{ $item->id }}" />
+                                    <label class="custom-control-label" for="role-{{ $item->id }}">
+                                        {{ $item->name }}
+                                    </label>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         @endif

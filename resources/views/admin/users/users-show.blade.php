@@ -3,18 +3,25 @@
 <div>
     <div class="row">
         <div class="col-12">
-            <ul class="list-group mb-3">
-                <li class="list-group-item">{{ $user->name }}</li>
-                <li class="list-group-item">{{ $user->email }}</li>
-                <li class="list-group-item">Atualizado {{ $user->updated_at->diffForHumans() }}</li>
-                <li class="list-group-item">
-                    @if ($user->active)
-                        <span class="badge rounded-pill badge-success-light">Ativo</span>
-                    @else
-                        <span class="badge rounded-pill badge-danger-light">Inativo</span>
-                    @endif
-                </li>
-            </ul>
+            <div class="card">
+                <div class="card-body pb-0">
+                    <dl class="row pb-0">
+                        <dt class="col-sm-2">Nome</dt>
+                        <dd class="col-sm-10">{{ $user->name }}</dd>
+                        <dt class="col-sm-2">Email</dt>
+                        <dd class="col-sm-10">{{ $user->email }}</dd>
+                        <dt class="col-sm-2">Atualizado</dt>
+                        <dd class="col-sm-10">{{ $user->updated_at->diffForHumans() }}</dd>
+                        <dt class="col-sm-2">Status</dt>
+                        <dd class="col-sm-10">
+                            @if ($user->active)
+                                <span class="badge rounded-pill badge-success-light">Ativo</span>
+                            @else
+                                <span class="badge rounded-pill badge-danger-light">Inativo</span>
+                            @endif
+                        </dd>
+                </div>
+            </div>
         </div>
     </div>
 
