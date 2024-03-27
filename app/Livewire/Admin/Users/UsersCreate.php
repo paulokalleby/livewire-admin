@@ -5,14 +5,12 @@ namespace App\Livewire\Admin\Users;
 use App\Livewire\Forms\User\UserStoreForm;
 use App\Models\Role;
 use Livewire\Component;
-use Livewire\Attributes\On;
 use Masmerise\Toaster\Toaster;
 
 class UsersCreate extends Component
 {
     public UserStoreForm $form; 
 
-    #[On('$refresh')]
     public function render()
     {
         return view('.admin.users.users-create')->with([

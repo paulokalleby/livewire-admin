@@ -5,7 +5,7 @@ namespace App\Traits;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
-trait HasSingleField
+trait HasUniqueField
 {
 
     public function unique(String $model, String $id = null)
