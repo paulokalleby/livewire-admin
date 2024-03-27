@@ -12,6 +12,8 @@ class UsersEdit extends Component
 {
     public UserUpdateForm $form; 
 
+    public $roles;
+
     public function render()
     {
         return view('admin.users.users-edit')->with([
@@ -22,6 +24,8 @@ class UsersEdit extends Component
     public function mount(User $user)
     {
         $this->form->setUser($user);
+
+        $this->roles = Role::whereActive(true)->orderBy('name')->get();
     }
 
     public function update() : void
@@ -33,6 +37,18 @@ class UsersEdit extends Component
 
         Toaster::success('Usuário atualizado com sucesso!');
 
+    }
+
+    public function selectAll()
+    {
+        foreach($this->roles as $role) {
+            $this->form->role[$role->id] = true;
+        }     
+    }
+
+    public function clearSelection()
+    {
+        $this->form->role = [];
     }
 
 }
