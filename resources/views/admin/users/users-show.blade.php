@@ -54,8 +54,18 @@
 
     <div class="row">
         <div class="col-12 mb-3">
-            <a href="{{ route('users.index') }}" class="btn btn-outline-primary" wire:navigate>Retornar</a>
-            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-primary float-end" wire:navigate>Editar</a>
+            <a href="{{ route('users.index') }}" 
+                class="btn btn-outline-primary" 
+                title="Retornar"
+                wire:navigate>
+                Retornar
+            </a>
+            <a href="{{ route('users.edit', $user->id) }}" 
+                class="btn btn-outline-primary float-end"
+                title="Editar" 
+                wire:navigate>
+                Editar
+            </a>
         </div>
     </div>
 </div>

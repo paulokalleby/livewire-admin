@@ -27,6 +27,6 @@ class EmailVerify extends Component
     {
          Auth::logout();
 
-         return redirect( route('auth.login') );
+         return $this->redirect( route('auth.login'), navigate: true);
     }
 }

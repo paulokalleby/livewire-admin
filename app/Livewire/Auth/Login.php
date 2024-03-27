@@ -46,7 +46,7 @@ class Login extends Component
 
             Toaster::info('Seja bem vido(a) '.Auth::user()->name);
             
-            return redirect()->route('home');
+            return $this->redirect( route('home'), navigate: true);
 
         }
 

@@ -80,13 +80,19 @@
     <div class="row">
         <div class="col-12 mb-3">
             <button type="button" 
+                title="Salvar"
                 wire:click.prevent="store"
                 wire:loading.attr="disabled" 
                 class="btn btn-primary">
                 <span wire:loading.remove wire:target="store">Salvar</span>
                 <span wire:loading wire:target="store">Salvando...</span>
             </button>
-            <a href="{{ route('roles.index') }}" class="btn btn-outline-primary" wire:navigate>Cancelar</a>
+            <a href="{{ route('roles.index') }}" 
+                title="Retornar"
+                class="btn btn-outline-primary" 
+                wire:navigate>
+                Retornar
+            </a>
         </div>
     </div>
     

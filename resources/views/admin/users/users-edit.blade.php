@@ -95,13 +95,26 @@
 
     <div class="row">
         <div class="col-12 mb-3">
-            <button type="button" wire:click.prevent="update" wire:loading.attr="disabled" class="btn btn-primary">
+            <button type="button" 
+                title="Atualizar"
+                wire:click.prevent="update" 
+                wire:loading.attr="disabled" 
+                class="btn btn-primary">
                 <span wire:loading.remove wire:target="update">Atualizar</span>
                 <span wire:loading wire:target="update">Atualizando...</span>
             </button>
-            <a href="{{ route('users.index') }}" class="btn btn-outline-primary" wire:navigate>Cancelar</a>
-            <a href="{{ route('users.show', $form->uuid) }}" class="btn btn-outline-primary float-end"
-                wire:navigate>Detalhes</a>
+            <a href="{{ route('users.index') }}" 
+                class="btn btn-outline-primary"
+                title="Retornar" 
+                wire:navigate>
+                Cancelar
+            </a>
+            <a href="{{ route('users.show', $form->uuid) }}" 
+                class="btn btn-outline-primary float-end"
+                title="Detalhes"
+                wire:navigate>
+                Detalhes
+            </a>
         </div>
     </div>
 </div>

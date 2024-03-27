@@ -16,7 +16,7 @@ class Logout extends Component
     {
         Auth::logout();
 
-        $this->redirect( route('auth.login') );
+        return $this->redirect( route('auth.login'), navigate: true);
     }   
 
 }
