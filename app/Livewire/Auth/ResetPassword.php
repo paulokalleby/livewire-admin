@@ -4,7 +4,6 @@ namespace App\Livewire\Auth;
 
 use Livewire\Component;
 use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Rule;
@@ -29,7 +28,7 @@ class ResetPassword extends Component
     protected $messages = [
         'email.required'    => 'Informe o email da conta.',
         'email.email'       => 'Informe um e-mail válido.',
-        'password.required' => 'Informe sua senha.',
+        'password.required' => 'Informe sua nova senha.',
         'password_confirmation.required' => 'Informe a confirmação de senha.',
     ];
 
@@ -43,7 +42,8 @@ class ResetPassword extends Component
 
         $this->validate();
 
-        $status = Password::reset($this->only(['token', 'email', 'password', 'password_confirmation']), function ($user, $password) {
+        $status = Password::reset($this->only(['token', 'email', 'password', 'password_confirmation']), 
+            function ($user, $password) {
                 $user->forceFill([
                     'password' => $password
                 ])->setRememberToken(Str::random(60));
