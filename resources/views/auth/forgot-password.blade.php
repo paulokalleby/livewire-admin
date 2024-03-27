@@ -38,12 +38,6 @@
         </div>
     </div>
     <div class="text-center mb-3">
-        <a href="{{ route('auth.login') }}">Entrar</a>
+        <a href="{{ route('auth.login') }}" wire:navigate>Entrar</a>
     </div>
-
-    @if (session()->has('success'))
-        <livewire:globals.components.alert color="success" message="{{ session('success') }}"/>
-    @elseif (session()->has('danger'))
-        <livewire:globals.components.alert color="danger" message="{{ session('danger') }}"/>
-    @endif
 </div>

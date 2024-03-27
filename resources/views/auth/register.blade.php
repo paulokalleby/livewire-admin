@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="text-center mb-3">
-        Já tem uma conta? <a href="{{ route('auth.login') }}">Entrar</a>
+        Já tem uma conta? <a href="{{ route('auth.login') }}" wire:navigate>Entrar</a>
     </div>
 
 </div>

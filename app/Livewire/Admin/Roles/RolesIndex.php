@@ -29,7 +29,7 @@ class RolesIndex extends Component
     public function render()
     {
         return view('admin.roles.roles-index')->with([
-            'roles' => Role::with('users')
+            'roles' => Role::with('users', 'permissions')
                 ->where('name', 'like', '%' . $this->name . '%')
                 ->where('active', 'like', '%' . $this->status . '%')
                 ->orderBy('name', 'ASC')

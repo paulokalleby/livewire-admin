@@ -27,7 +27,7 @@
                     <div class="mb-3">
                         <label class="form-label">Senha</label>
                         <small class="float-end mt-1">
-                            <a href="{{ route('password.forgot') }}">Esqueceu sua senha?</a>
+                            <a href="{{ route('password.forgot') }}" wire:navigate>Esqueceu sua senha?</a>
                         </small>
                         <input class="form-control form-control-lg"
                             @if($show) type="text" 
@@ -66,11 +66,7 @@
         </div>
     </div>
     <div class="text-center mb-3">
-        Não tem uma conta? <a href="{{ route('auth.register') }}">Inscrever-se</a>
+        Não tem uma conta? <a href="{{ route('auth.register') }}" wire:navigate>Inscrever-se</a>
     </div>
-
-    @if (session()->has('message'))
-        <livewire:components.alert color="danger" message="{{ session('message') }}"/>
-    @endif
 
 </div>
