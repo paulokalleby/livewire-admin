@@ -16,27 +16,21 @@ class UsersEdit extends Component
 
     public function render()
     {
-        return view('admin.users.users-edit')->with([
-            'roles' => Role::orderBy('name')->get()
-        ]);
+        return view('admin.users.users-edit');
     }
 
     public function mount(User $user)
     {
-        $this->form->setUser($user);
-
         $this->roles = Role::whereActive(true)->orderBy('name')->get();
+
+        $this->form->setUser($user);
     }
 
     public function update() : void
     {
-
-        $this->validate();
-
         $this->form->update();
 
         Toaster::success('Usuário atualizado com sucesso!');
-
     }
 
     public function selectAll()

@@ -10,13 +10,10 @@ use Masmerise\Toaster\Toaster;
 class RolesShow extends Component
 {
     public ?Role $role;
-    public ?User $user;
 
     public function render()
     {
-        return view('.admin.roles.roles-show')->with([
-            'users' => $this->role->users,
-        ]);
+        return view('.admin.roles.roles-show');
     }
 
     public function mount(Role $role)

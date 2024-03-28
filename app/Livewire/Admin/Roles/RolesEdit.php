@@ -29,6 +29,14 @@ class RolesEdit extends Component
         $this->form->setRole($role);
     }
 
+    public function update() : void
+    {
+        $this->form->update();
+
+        Toaster::success('Papel atualizado com sucesso!');
+    }
+
+    
     public function selectAll()
     {
         foreach($this->permissions as $permission) {
@@ -39,17 +47,6 @@ class RolesEdit extends Component
     public function clearSelection()
     {
         $this->form->permission = [];
-    }
-
-    public function update() : void
-    {
-
-        $this->validate();
-
-        $this->form->update();
-
-        Toaster::success('Papel atualizado com sucesso!');
-
     }
 
 }

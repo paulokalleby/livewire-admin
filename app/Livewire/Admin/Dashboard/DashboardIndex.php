@@ -8,6 +8,8 @@ use Livewire\Component;
 
 class DashboardIndex extends Component
 {
+    public $search = '';
+    
     public function render()
     {
         return view('admin.dashboard.dashboard-index')->with([
