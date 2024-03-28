@@ -34,7 +34,11 @@
         <div class="col-12">
 
             @if ($roles->isEmpty())
-                <p class="text-center py-4">Nenhum registro encontrado!</p>
+                <div class="card ">
+                    <div class="card-body pb-0">
+                        <p class="text-center py-2">Nenhum registro encontrado!</p>
+                    </div>
+                </div>
             @else
                 <div class="card ">
                     <table class="table pb-0">
