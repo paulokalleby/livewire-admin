@@ -16,7 +16,7 @@ class AuthServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->registerPolicies();
+        //$this->registerPolicies();
 
         Gate::before( function (User $user, $permission) {
             if ( $user->permissions()->contains($permission) || $user->owner ) {

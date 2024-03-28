@@ -21,12 +21,15 @@
                 wire:click="resetFilters">
                 <i wire:target="resetFilters" wire:loading.class="fa-pulse" class="fal fa-sync-alt"></i>
             </button>
-            <a href="{{ route('roles.create') }}" 
-                class="btn btn-primary float-end mb-3" 
-                title="Novo"
-                wire:navigate>
-                <i class="fal fa-plus"></i> Novo
-            </a>
+            @can('roles.create')
+                <a href="{{ route('roles.create') }}" 
+                    class="btn btn-primary float-end mb-3" 
+                    title="Novo"
+                    wire:navigate>
+                    <i class="fal fa-plus"></i> Novo
+                </a>
+            @endcan
+
         </div>
     </div>
 
@@ -63,25 +66,35 @@
                                         @endif
                                     </td>
                                     <td class="text-end">
-                                        <a href="{{ route('roles.show', $role->id) }}" 
-                                            class="btn btn-sm btn-light"
-                                            title="Detalhes"
-                                            wire:navigate>
-                                            <i class="far fa-eye"></i>
-                                        </a>
-                                        <a href="{{ route('roles.edit', $role->id) }}" 
-                                            class="btn btn-sm btn-light"
-                                            title="Editar"
-                                            wire:navigate>
-                                            <i class="far fa-pen"></i>
-                                        </a>
-                                        <button class="btn btn-sm btn-light" 
-                                            @disabled($role->users->count() > 0)
-                                            title="Excluir"
-                                            wire:confirm="Deseja excluir registro?"
-                                            wire:click.prevent="delete('{{ $role->id }}')">
-                                            <i class=" far fa-trash"></i>
-                                        </button>
+                                        
+                                        @can('roles.show')
+                                            <a href="{{ route('roles.show', $role->id) }}" 
+                                                class="btn btn-sm btn-light"
+                                                title="Detalhes"
+                                                wire:navigate>
+                                                <i class="far fa-eye"></i>
+                                            </a>
+                                        @endcan
+
+                                        @can('roles.edit')
+                                            <a href="{{ route('roles.edit', $role->id) }}" 
+                                                class="btn btn-sm btn-light"
+                                                title="Editar"
+                                                wire:navigate>
+                                                <i class="far fa-pen"></i>
+                                            </a>
+                                        @endcan
+
+                                        @can('roles.delete')
+                                            <button class="btn btn-sm btn-light" 
+                                                @disabled($role->users->count() > 0)
+                                                title="Excluir"
+                                                wire:confirm="Deseja excluir registro?"
+                                                wire:click.prevent="delete('{{ $role->id }}')">
+                                                <i class=" far fa-trash"></i>
+                                            </button>
+                                        @endcan
+
                                     </td>
                                 </tr>
                             @endforeach
