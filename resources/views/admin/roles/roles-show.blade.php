@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    @if (!$users->isEmpty())
+    @if (!$role->users->isEmpty())
     
         <div class="row mb-xl-3">
             <div class="col-auto d-none d-sm-block">
@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-12">
                 <ul class="list-group mb-3">
-                    @foreach ($users as $user)
+                    @foreach ($role->users as $user)
                         <li class="list-group-item">
                             {{ $user->name }}
                             <button class="btn btn-sm btn-light float-end"
